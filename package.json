@@ -1,0 +1,25 @@
+{
+  "name": "patricklensennl",
+  "version": "1.0.0",
+  "description": "Resume",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PatrickLensen337/portfolio.git"
+  },
+  "keywords": [
+    "Resume"
+  ],
+  "author": "Patrick Lensen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PatrickLensen337/portfolio/issues"
+  },
+  "homepage": "https://github.com/PatrickLensen337/portfolio#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  }
+}
