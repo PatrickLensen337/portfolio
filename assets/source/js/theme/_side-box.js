@@ -1,17 +1,17 @@
 /**
- * Certy Side Box
+ * patricklensen Side Box
  */
-certy.sideBox.exists = false;
-certy.sideBox.makeSticky = function(){
+patricklensen.sideBox.exists = false;
+patricklensen.sideBox.makeSticky = function(){
 
     // check sticky option, device type and screen size
-    if ( this.sticky.active && !certy.vars.mobile && Modernizr.mq('(min-width: ' + certy.vars.screenMd + ')') ) {
+    if ( this.sticky.active && !patricklensen.vars.mobile && Modernizr.mq('(min-width: ' + patricklensen.vars.screenMd + ')') ) {
 
         // check if nav nodes exists
         if ( this.exists ){
 
             // check if window scroll pass element
-            if ( certy.vars.windowScrollTop > this.wrap.offset().top ) {
+            if ( patricklensen.vars.windowScrollTop > this.wrap.offset().top ) {
                 this.el.css({
                     'top': this.sticky.top + 'px',
                     'left': this.wrap.offset().left,

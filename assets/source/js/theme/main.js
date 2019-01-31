@@ -6,27 +6,27 @@
         /**
          *  Set Global Vars
          */
-        certy.initGlobalVars();
+        patricklensen.initGlobalVars();
 
         /**
          *  Navigation
          */
-        if (certy.vars.html.hasClass('crt-nav-on')) { // Check If Nav Exists
+        if (patricklensen.vars.html.hasClass('crt-nav-on')) { // Check If Nav Exists
 
             // Scrolled Navigation ( large screens )
-            if ( Modernizr.mq('(min-width: '+certy.vars.screenMd+')') && certy.nav.height !== 'auto' ) {
-                certy.nav.initScroll( $('#crt-nav-scroll') );
+            if ( Modernizr.mq('(min-width: '+patricklensen.vars.screenMd+')') && patricklensen.nav.height !== 'auto' ) {
+                patricklensen.nav.initScroll( $('#crt-nav-scroll') );
             }
 
             // Sticky Navigation
-            certy.nav.makeSticky();
+            patricklensen.nav.makeSticky();
 
             // Navigation Tooltips
-            if(certy.nav.tooltip.active){
+            if(patricklensen.nav.tooltip.active){
                 $('#crt-nav a').hover(function () {
-                    certy.nav.tooltip.show( $(this) );
+                    patricklensen.nav.tooltip.show( $(this) );
                 },function () {
-                    certy.nav.tooltip.hide();
+                    patricklensen.nav.tooltip.hide();
                 });
             };
 
@@ -40,7 +40,7 @@
         /**
          *  Fixed Side Box
          */
-        certy.sideBox.makeSticky();
+        patricklensen.sideBox.makeSticky();
 
         /** Portfolio */
         var pf_grid = $('.pf-grid');
@@ -48,13 +48,13 @@
         if (pf_grid.length > 0) {
 
             // init portfolio grid
-            certy.portfolio.initGrid(pf_grid);
+            patricklensen.portfolio.initGrid(pf_grid);
 
             // open portfolio popup
             $(document).on('click', '.pf-project', function() {
                 var id = $(this).attr('href');
 
-                certy.portfolio.openPopup( $(id) );
+                patricklensen.portfolio.openPopup( $(id) );
 
                 return false;
             });
@@ -65,17 +65,17 @@
 
                 // if the target of the click isn't the container... nor a descendant of the container
                 if (!container.is(e.target) && container.has(e.target).length === 0) {
-                    certy.portfolio.closePopup();
+                    patricklensen.portfolio.closePopup();
                 }
             });
         }
 
         /** Components */
         // init sliders
-        certy.slider( $(".cr-slider") );
+        patricklensen.slider( $(".cr-slider") );
 
         // init carousel
-        certy.carousel( $(".cr-carousel") );
+        patricklensen.carousel( $(".cr-carousel") );
     }); // end: document ready
 
 
@@ -83,15 +83,15 @@
     $(window).on('resize', function () { // start: window resize
 
         // Re Init Vars
-        certy.vars.windowW = $(window).width();
-        certy.vars.windowH = $(window).height();
-        certy.vars.windowScrollTop = $(window).scrollTop();
+        patricklensen.vars.windowW = $(window).width();
+        patricklensen.vars.windowH = $(window).height();
+        patricklensen.vars.windowScrollTop = $(window).scrollTop();
 
         // Sticky Navigation
-        certy.nav.makeSticky();
+        patricklensen.nav.makeSticky();
 
         // Sticky Side Box
-        certy.sideBox.makeSticky();
+        patricklensen.sideBox.makeSticky();
 
     }); // end: window resize
 
@@ -100,17 +100,17 @@
     $(window).on('scroll', function () { // start: window scroll
 
         // Re Init Vars
-        certy.vars.windowScrollTop = $(window).scrollTop();
+        patricklensen.vars.windowScrollTop = $(window).scrollTop();
 
         // Sticky Navigation
-        certy.nav.makeSticky();
+        patricklensen.nav.makeSticky();
 
         // Sticky Side Box
-        certy.sideBox.makeSticky();
+        patricklensen.sideBox.makeSticky();
 
         // Remove Tooltip
-        if(certy.nav.tooltip.el.length > 0){
-            certy.nav.tooltip.el.remove();
+        if(patricklensen.nav.tooltip.el.length > 0){
+            patricklensen.nav.tooltip.el.remove();
         }
 
     }); // end: window scroll

@@ -1,7 +1,7 @@
 /**
- * Certy Global vars
+ * patricklensen Global vars
  */
-certy.initGlobalVars = function(){
+patricklensen.initGlobalVars = function(){
     // get document <html>
     this.vars.html = $('html');
 

@@ -1,36 +1,36 @@
 /**
- * Certy Functions
+ * patricklensen Functions
  */
 
 /* Lock Window Scroll */
-certy.lockScroll = function(){
-    var initWidth = certy.vars.html.outerWidth();
-    var initHeight = certy.vars.body.outerHeight();
+patricklensen.lockScroll = function(){
+    var initWidth = patricklensen.vars.html.outerWidth();
+    var initHeight = patricklensen.vars.body.outerHeight();
 
     var scrollPosition = [
         self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
         self.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
     ];
 
-    certy.vars.html.data('scroll-position', scrollPosition);
-    certy.vars.html.data('previous-overflow', certy.vars.html.css('overflow'));
-    certy.vars.html.css('overflow', 'hidden');
+    patricklensen.vars.html.data('scroll-position', scrollPosition);
+    patricklensen.vars.html.data('previous-overflow', patricklensen.vars.html.css('overflow'));
+    patricklensen.vars.html.css('overflow', 'hidden');
     window.scrollTo(scrollPosition[0], scrollPosition[1]);
 
-    var marginR = certy.vars.body.outerWidth() - initWidth;
-    var marginB = certy.vars.body.outerHeight() - initHeight;
-    certy.vars.body.css({'margin-right': marginR, 'margin-bottom': marginB});
-    certy.vars.html.addClass('lock-scroll');
+    var marginR = patricklensen.vars.body.outerWidth() - initWidth;
+    var marginB = patricklensen.vars.body.outerHeight() - initHeight;
+    patricklensen.vars.body.css({'margin-right': marginR, 'margin-bottom': marginB});
+    patricklensen.vars.html.addClass('lock-scroll');
 };
 
 /* Unlock Window Scroll */
-certy.unlockScroll = function(){
-    certy.vars.html.css('overflow', certy.vars.html.data('previous-overflow'));
-    var scrollPosition = certy.vars.html.data('scroll-position');
+patricklensen.unlockScroll = function(){
+    patricklensen.vars.html.css('overflow', patricklensen.vars.html.data('previous-overflow'));
+    var scrollPosition = patricklensen.vars.html.data('scroll-position');
     window.scrollTo(scrollPosition[0], scrollPosition[1]);
 
-    certy.vars.body.css({'margin-right': 0, 'margin-bottom': 0});
-    certy.vars.html.removeClass('lock-scroll');
+    patricklensen.vars.body.css({'margin-right': 0, 'margin-bottom': 0});
+    patricklensen.vars.html.removeClass('lock-scroll');
 };
 
 /* Detect Device Type */
@@ -44,7 +44,7 @@ function ace_detect_device_type() {
     }
 }
 
-/* Certy Overlay */
+/* patricklensen Overlay */
 function ace_append_overlay() {
     ace.body.append(ace.overlay.obj);
 
@@ -66,7 +66,7 @@ function ace_remove_overlay() {
     ace.overlay.obj.remove();
 }
 
-/* Certy Lock Scroll */
+/* patricklensen Lock Scroll */
 function ace_lock_scroll() {
     var initWidth = ace.html.outerWidth();
     var initHeight = ace.body.outerHeight();
@@ -87,7 +87,7 @@ function ace_lock_scroll() {
     ace.html.addClass('crt-lock-scroll');
 }
 
-/* Certy Unlock Scroll */
+/* patricklensen Unlock Scroll */
 function ace_unlock_scroll() {
     ace.html.css('overflow', ace.html.data('previous-overflow'));
     var scrollPosition = ace.html.data('scroll-position');
@@ -97,7 +97,7 @@ function ace_unlock_scroll() {
     ace.html.removeClass('crt-lock-scroll');
 }
 
-/* Certy Close Sidebar */
+/* patricklensen Close Sidebar */
 function ace_open_sidebar() {
     ace.html.addClass('crt-sidebar-opened');
     ace_append_overlay();
@@ -110,10 +110,10 @@ function ace_close_sidebar() {
     ace_unlock_scroll();
 }
 
-/* Certy Progress Circle */
+/* patricklensen Progress Circle */
 function ace_progress_chart(element, text, value, duration) {
     var circle = new ProgressBar.Circle(element, {
-        color: certy.vars.themeColor,
+        color: patricklensen.vars.themeColor,
         strokeWidth: 5,
         trailWidth: 0,
         text: {
@@ -122,7 +122,7 @@ function ace_progress_chart(element, text, value, duration) {
             style: {
                 top: '50%',
                 left: '50%',
-                color: certy.progress.textColor,
+                color: patricklensen.progress.textColor,
                 position: 'absolute',
                 margin: 0,
                 padding: 0,
@@ -145,14 +145,14 @@ function ace_progress_chart(element, text, value, duration) {
     circle.animate(value); // Number from 0.0 to 1.0
 }
 
-/* Certy Progress Line */
+/* patricklensen Progress Line */
 function ace_progress_line(element, text, value, duration) {
     var line = new ProgressBar.Line(element, {
         strokeWidth: 4,
         easing: 'easeInOut',
         duration: duration,
-        color: certy.vars.themeColor,
-        trailColor: certy.progress.trailColor,
+        color: patricklensen.vars.themeColor,
+        trailColor: patricklensen.progress.trailColor,
         trailWidth: 4,
         svgStyle: {
             width: '100%',
@@ -164,7 +164,7 @@ function ace_progress_line(element, text, value, duration) {
             style: {
                 top: '-25px',
                 right: '0',
-                color: certy.progress.textColor,
+                color: patricklensen.progress.textColor,
                 position: 'absolute',
                 margin: 0,
                 padding: 0,
@@ -180,7 +180,7 @@ function ace_progress_line(element, text, value, duration) {
     line.animate(value);  // Number from 0.0 to 1.0
 }
 
-/* Certy Element In Viewport */
+/* patricklensen Element In Viewport */
 function ace_is_elem_in_viewport(el, vpart) {
     var rect = el[0].getBoundingClientRect();
 
@@ -226,7 +226,7 @@ function ace_appear_elems(elems, vpart) {
     });
 }
 
-/* Certy Google Map */
+/* patricklensen Google Map */
 function initialiseGoogleMap() {
     var latlng;
     var lat = 44.5403;

@@ -29,18 +29,18 @@ var ace = {
 $(function () { // start: document ready
 
     /**
-     * Certy Init Main Vars
+     * patricklensen Init Main Vars
      */
     ace.html = $('html');
     ace.body = $('body');
 
     /**
-     * Certy Detect Device Type
+     * patricklensen Detect Device Type
      */
     ace_detect_device_type();
 
     /**
-     * Certy Mobile Navigation
+     * patricklensen Mobile Navigation
      */
     $('#crt-main-nav-sm .has-sub-menu > a').on('click touchstart', function(){
         if( $(this).hasClass('hover') ){
@@ -53,7 +53,7 @@ $(function () { // start: document ready
     });
 
     /**
-     * Certy Sidebar
+     * patricklensen Sidebar
      */
     ace.sidebar.obj = $('#crt-sidebar');
     ace.sidebar.btn = $('#crt-sidebar-btn');
@@ -86,9 +86,9 @@ $(function () { // start: document ready
     });
 
     /**
-     * Certy Circle & Line Charts
+     * patricklensen Circle & Line Charts
      */
-    if(!certy.progress.animation || ace.mobile) {
+    if(!patricklensen.progress.animation || ace.mobile) {
         // Circle Chart
         ace.progress.charts = $('.progress-chart .progress-bar');
         for (var i = 0; i < ace.progress.charts.length; i++) {
@@ -107,9 +107,9 @@ $(function () { // start: document ready
     }
 
     /**
-     * Certy Animate Elements
+     * patricklensen Animate Elements
      */
-    if(certy.progress.animation && !ace.mobile) {
+    if(patricklensen.progress.animation && !ace.mobile) {
         ace_appear_elems($('.crt-animate'), 150);
     }
 
@@ -121,7 +121,7 @@ $(function () { // start: document ready
     });
 
     /**
-     * Certy Alerts
+     * patricklensen Alerts
      */
     $('.alert .close').on('click', function () {
         var alert = $(this).parent();
@@ -132,14 +132,14 @@ $(function () { // start: document ready
     });
 
     /**
-     * Certy Slider
+     * patricklensen Slider
      */
     $('.slider').slick({
         dots: true
     });
 
     /**
-     * Certy Google Map Initialisation
+     * patricklensen Google Map Initialisation
      */
     if ($('#map').length > 0) {
         initialiseGoogleMap();

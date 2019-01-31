@@ -1,9 +1,9 @@
 /**
- * Certy Slider
+ * patricklensen Slider
  */
 
 // Slider
-certy.slider = function(slider){
+patricklensen.slider = function(slider){
     for (var i = 0; i < slider.length; i++) {
 
        if( $(slider[i]).data("init") != "none" ){
@@ -13,7 +13,7 @@ certy.slider = function(slider){
 };
 
 // Carousel
-certy.carousel = function(carousel){
+patricklensen.carousel = function(carousel){
     for (var i = 0; i < carousel.length; i++) {
         if( $(carousel[i]).data("init") !== "none" ){
             $(carousel[i]).slick({

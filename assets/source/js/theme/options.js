@@ -1,7 +1,7 @@
 /**
- * Certy Options
+ * patricklensen Options
  */
-var certy = {
+var patricklensen = {
     vars: {
         // Set theme rtl mode
         rtl: false,

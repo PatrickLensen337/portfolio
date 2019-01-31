@@ -1,7 +1,7 @@
 /**
- * Certy Options
+ * patricklensen Options
  */
-var certy = {
+var patricklensen = {
     vars: {
         // Set theme rtl mode
         rtl: false,
@@ -39,9 +39,9 @@ var certy = {
     }
 };
 /**
- * Certy Global vars
+ * patricklensen Global vars
  */
-certy.initGlobalVars = function(){
+patricklensen.initGlobalVars = function(){
     // get document <html>
     this.vars.html = $('html');
 
@@ -70,38 +70,38 @@ certy.initGlobalVars = function(){
     }
 };
 /**
- * Certy Functions
+ * patricklensen Functions
  */
 
 /* Lock Window Scroll */
-certy.lockScroll = function(){
-    var initWidth = certy.vars.html.outerWidth();
-    var initHeight = certy.vars.body.outerHeight();
+patricklensen.lockScroll = function(){
+    var initWidth = patricklensen.vars.html.outerWidth();
+    var initHeight = patricklensen.vars.body.outerHeight();
 
     var scrollPosition = [
         self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
         self.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
     ];
 
-    certy.vars.html.data('scroll-position', scrollPosition);
-    certy.vars.html.data('previous-overflow', certy.vars.html.css('overflow'));
-    certy.vars.html.css('overflow', 'hidden');
+    patricklensen.vars.html.data('scroll-position', scrollPosition);
+    patricklensen.vars.html.data('previous-overflow', patricklensen.vars.html.css('overflow'));
+    patricklensen.vars.html.css('overflow', 'hidden');
     window.scrollTo(scrollPosition[0], scrollPosition[1]);
 
-    var marginR = certy.vars.body.outerWidth() - initWidth;
-    var marginB = certy.vars.body.outerHeight() - initHeight;
-    certy.vars.body.css({'margin-right': marginR, 'margin-bottom': marginB});
-    certy.vars.html.addClass('lock-scroll');
+    var marginR = patricklensen.vars.body.outerWidth() - initWidth;
+    var marginB = patricklensen.vars.body.outerHeight() - initHeight;
+    patricklensen.vars.body.css({'margin-right': marginR, 'margin-bottom': marginB});
+    patricklensen.vars.html.addClass('lock-scroll');
 };
 
 /* Unlock Window Scroll */
-certy.unlockScroll = function(){
-    certy.vars.html.css('overflow', certy.vars.html.data('previous-overflow'));
-    var scrollPosition = certy.vars.html.data('scroll-position');
+patricklensen.unlockScroll = function(){
+    patricklensen.vars.html.css('overflow', patricklensen.vars.html.data('previous-overflow'));
+    var scrollPosition = patricklensen.vars.html.data('scroll-position');
     window.scrollTo(scrollPosition[0], scrollPosition[1]);
 
-    certy.vars.body.css({'margin-right': 0, 'margin-bottom': 0});
-    certy.vars.html.removeClass('lock-scroll');
+    patricklensen.vars.body.css({'margin-right': 0, 'margin-bottom': 0});
+    patricklensen.vars.html.removeClass('lock-scroll');
 };
 
 /* Detect Device Type */
@@ -115,7 +115,7 @@ function ace_detect_device_type() {
     }
 }
 
-/* Certy Overlay */
+/* patricklensen Overlay */
 function ace_append_overlay() {
     ace.body.append(ace.overlay.obj);
 
@@ -137,7 +137,7 @@ function ace_remove_overlay() {
     ace.overlay.obj.remove();
 }
 
-/* Certy Lock Scroll */
+/* patricklensen Lock Scroll */
 function ace_lock_scroll() {
     var initWidth = ace.html.outerWidth();
     var initHeight = ace.body.outerHeight();
@@ -158,7 +158,7 @@ function ace_lock_scroll() {
     ace.html.addClass('crt-lock-scroll');
 }
 
-/* Certy Unlock Scroll */
+/* patricklensen Unlock Scroll */
 function ace_unlock_scroll() {
     ace.html.css('overflow', ace.html.data('previous-overflow'));
     var scrollPosition = ace.html.data('scroll-position');
@@ -168,7 +168,7 @@ function ace_unlock_scroll() {
     ace.html.removeClass('crt-lock-scroll');
 }
 
-/* Certy Close Sidebar */
+/* patricklensen Close Sidebar */
 function ace_open_sidebar() {
     ace.html.addClass('crt-sidebar-opened');
     ace_append_overlay();
@@ -181,10 +181,10 @@ function ace_close_sidebar() {
     ace_unlock_scroll();
 }
 
-/* Certy Progress Circle */
+/* patricklensen Progress Circle */
 function ace_progress_chart(element, text, value, duration) {
     var circle = new ProgressBar.Circle(element, {
-        color: certy.vars.themeColor,
+        color: patricklensen.vars.themeColor,
         strokeWidth: 5,
         trailWidth: 0,
         text: {
@@ -193,7 +193,7 @@ function ace_progress_chart(element, text, value, duration) {
             style: {
                 top: '50%',
                 left: '50%',
-                color: certy.progress.textColor,
+                color: patricklensen.progress.textColor,
                 position: 'absolute',
                 margin: 0,
                 padding: 0,
@@ -216,14 +216,14 @@ function ace_progress_chart(element, text, value, duration) {
     circle.animate(value); // Number from 0.0 to 1.0
 }
 
-/* Certy Progress Line */
+/* patricklensen Progress Line */
 function ace_progress_line(element, text, value, duration) {
     var line = new ProgressBar.Line(element, {
         strokeWidth: 4,
         easing: 'easeInOut',
         duration: duration,
-        color: certy.vars.themeColor,
-        trailColor: certy.progress.trailColor,
+        color: patricklensen.vars.themeColor,
+        trailColor: patricklensen.progress.trailColor,
         trailWidth: 4,
         svgStyle: {
             width: '100%',
@@ -235,7 +235,7 @@ function ace_progress_line(element, text, value, duration) {
             style: {
                 top: '-25px',
                 right: '0',
-                color: certy.progress.textColor,
+                color: patricklensen.progress.textColor,
                 position: 'absolute',
                 margin: 0,
                 padding: 0,
@@ -251,7 +251,7 @@ function ace_progress_line(element, text, value, duration) {
     line.animate(value);  // Number from 0.0 to 1.0
 }
 
-/* Certy Element In Viewport */
+/* patricklensen Element In Viewport */
 function ace_is_elem_in_viewport(el, vpart) {
     var rect = el[0].getBoundingClientRect();
 
@@ -297,7 +297,7 @@ function ace_appear_elems(elems, vpart) {
     });
 }
 
-/* Certy Google Map */
+/* patricklensen Google Map */
 function initialiseGoogleMap() {
     var latlng;
     var lat = 44.5403;
@@ -455,15 +455,15 @@ function initialiseGoogleMap() {
     });
 }
 /**
- * Certy Navigation
+ * patricklensen Navigation
  */
 
 // Navigation With Scroll and Arrow
-certy.nav.initScroll = function( el ){
+patricklensen.nav.initScroll = function( el ){
     // Set Nav Height
-    // certy.nav.scroll = el;
+    // patricklensen.nav.scroll = el;
 
-    el.height(el.height()).animate({height: certy.nav.height}, 700, function(){
+    el.height(el.height()).animate({height: patricklensen.nav.height}, 700, function(){
 
         // Mouse Scroll
         el.mCustomScrollbar({
@@ -473,27 +473,27 @@ certy.nav.initScroll = function( el ){
     });
 
     // Arrow Scroll
-    if (certy.nav.arrow){
+    if (patricklensen.nav.arrow){
         $("#crt-nav-tools").removeClass('hidden');
 
         $("#crt-nav-arrow").on("click", function () {
-            el.mCustomScrollbar('scrollTo', '-='+certy.nav.height);
+            el.mCustomScrollbar('scrollTo', '-='+patricklensen.nav.height);
         });
     }
 };
 
 // Sticky Navigation
-certy.nav.exists = false;
-certy.nav.makeSticky = function(){
+patricklensen.nav.exists = false;
+patricklensen.nav.makeSticky = function(){
 
     // check sticky option, device type and screen size
-    if ( this.sticky.active && !certy.vars.mobile && Modernizr.mq('(min-width: ' + certy.vars.screenMd + ')') ) {
+    if ( this.sticky.active && !patricklensen.vars.mobile && Modernizr.mq('(min-width: ' + patricklensen.vars.screenMd + ')') ) {
 
         // check if nav nodes exists
         if ( this.exists ){
 
             // check if window scroll pass element
-            if ( certy.vars.windowScrollTop > this.wrap.offset().top ) {
+            if ( patricklensen.vars.windowScrollTop > this.wrap.offset().top ) {
                 this.el.css({
                     'top': this.sticky.top + 'px',
                     'left': this.wrap.offset().left,
@@ -522,13 +522,13 @@ certy.nav.makeSticky = function(){
 };
 
 // Navigation Tooltips
-certy.nav.tooltip.timer = 0;
-certy.nav.tooltip.el = '';
+patricklensen.nav.tooltip.timer = 0;
+patricklensen.nav.tooltip.el = '';
 
-certy.nav.tooltip.show = function(current){
-    certy.nav.tooltip.timer = setTimeout(function () {
+patricklensen.nav.tooltip.show = function(current){
+    patricklensen.nav.tooltip.timer = setTimeout(function () {
 
-        certy.nav.tooltip.el = $('<div class="crt-tooltip"></div>');
+        patricklensen.nav.tooltip.el = $('<div class="crt-tooltip"></div>');
 
         // Init vars
         var top = current.offset().top;
@@ -538,49 +538,49 @@ certy.nav.tooltip.show = function(current){
         var height = 0; //(ace.nav.tooltip.height() - $(this).height() )/2;
 
         // Append tooltip
-        certy.vars.body.append( certy.nav.tooltip.el );
+        patricklensen.vars.body.append( patricklensen.nav.tooltip.el );
 
         // Set tooltip text
-        certy.nav.tooltip.el.text( current.data('tooltip') );
+        patricklensen.nav.tooltip.el.text( current.data('tooltip') );
 
         // Positioning tooltip
-        if (right + certy.nav.tooltip.el.outerWidth() < certy.vars.windowW) {
-            certy.nav.tooltip.el.addClass('arrow-left').css({"left": right + "px", "top": (top + height) + "px"});
+        if (right + patricklensen.nav.tooltip.el.outerWidth() < patricklensen.vars.windowW) {
+            patricklensen.nav.tooltip.el.addClass('arrow-left').css({"left": right + "px", "top": (top + height) + "px"});
         } else {
-            certy.nav.tooltip.el.addClass('arrow-right text-right').css({
-                "left": (left - certy.nav.tooltip.el.outerWidth() - 10) + "px",
+            patricklensen.nav.tooltip.el.addClass('arrow-right text-right').css({
+                "left": (left - patricklensen.nav.tooltip.el.outerWidth() - 10) + "px",
                 "top": (top + height) + "px"
             });
         }
 
         // Show Tooltip
-        certy.nav.tooltip.el.fadeIn(150);
+        patricklensen.nav.tooltip.el.fadeIn(150);
 
     }, 150);
 };
 
-certy.nav.tooltip.hide = function(){
-    clearTimeout(certy.nav.tooltip.timer);
-    if (certy.nav.tooltip.el.length > 0) {
-        certy.nav.tooltip.el.fadeOut(150, function () {
-            certy.nav.tooltip.el.remove();
+patricklensen.nav.tooltip.hide = function(){
+    clearTimeout(patricklensen.nav.tooltip.timer);
+    if (patricklensen.nav.tooltip.el.length > 0) {
+        patricklensen.nav.tooltip.el.fadeOut(150, function () {
+            patricklensen.nav.tooltip.el.remove();
         });
     }
 };
 /**
- * Certy Side Box
+ * patricklensen Side Box
  */
-certy.sideBox.exists = false;
-certy.sideBox.makeSticky = function(){
+patricklensen.sideBox.exists = false;
+patricklensen.sideBox.makeSticky = function(){
 
     // check sticky option, device type and screen size
-    if ( this.sticky.active && !certy.vars.mobile && Modernizr.mq('(min-width: ' + certy.vars.screenMd + ')') ) {
+    if ( this.sticky.active && !patricklensen.vars.mobile && Modernizr.mq('(min-width: ' + patricklensen.vars.screenMd + ')') ) {
 
         // check if nav nodes exists
         if ( this.exists ){
 
             // check if window scroll pass element
-            if ( certy.vars.windowScrollTop > this.wrap.offset().top ) {
+            if ( patricklensen.vars.windowScrollTop > this.wrap.offset().top ) {
                 this.el.css({
                     'top': this.sticky.top + 'px',
                     'left': this.wrap.offset().left,
@@ -608,11 +608,11 @@ certy.sideBox.makeSticky = function(){
     }
 };
 /**
- * Certy Slider
+ * patricklensen Slider
  */
 
 // Slider
-certy.slider = function(slider){
+patricklensen.slider = function(slider){
     for (var i = 0; i < slider.length; i++) {
 
        if( $(slider[i]).data("init") != "none" ){
@@ -622,7 +622,7 @@ certy.slider = function(slider){
 };
 
 // Carousel
-certy.carousel = function(carousel){
+patricklensen.carousel = function(carousel){
     for (var i = 0; i < carousel.length; i++) {
         if( $(carousel[i]).data("init") !== "none" ){
             $(carousel[i]).slick({
@@ -634,15 +634,15 @@ certy.carousel = function(carousel){
 
 
 /**
- * Certy Portfolio
+ * patricklensen Portfolio
  */
 
-certy.portfolio = {};
+patricklensen.portfolio = {};
 
-certy.portfolio.initGrid = function(el){
+patricklensen.portfolio.initGrid = function(el){
     // isotope initialization
     var grid = el.isotope({
-        isOriginLeft: !certy.vars.rtl,
+        isOriginLeft: !patricklensen.vars.rtl,
         itemSelector: '.pf-grid-item',
         percentPosition: true,
         masonry: {
@@ -673,9 +673,9 @@ certy.portfolio.initGrid = function(el){
     }
 };
 
-certy.portfolio.openPopup = function(el){
+patricklensen.portfolio.openPopup = function(el){
     // add opened class on html
-    certy.vars.html.addClass('cr-portfolio-opened');
+    patricklensen.vars.html.addClass('cr-portfolio-opened');
 
     // append portfolio popup
     this.popup_wrapper = $('<div id="pf-popup-wrap">'+
@@ -689,7 +689,7 @@ certy.portfolio.openPopup = function(el){
         '</div>'+
         '</div>');
 
-    certy.vars.body.append( this.popup_wrapper );
+    patricklensen.vars.body.append( this.popup_wrapper );
 
     // add portfolio popup content
     this.popup_content = $('#pf-popup-content');
@@ -712,19 +712,19 @@ certy.portfolio.openPopup = function(el){
     this.popup_wrapper.addClass('pf-opened');
 
     // lock window scroll
-    certy.lockScroll();
+    patricklensen.lockScroll();
 };
 
-certy.portfolio.closePopup = function(el){
+patricklensen.portfolio.closePopup = function(el){
     // remove opened class from html
-    certy.vars.html.removeClass('cr-portfolio-opened');
+    patricklensen.vars.html.removeClass('cr-portfolio-opened');
 
     // make portfolio popup invisible
     this.popup_wrapper.removeClass('pf-opened');
 
     setTimeout(function(){
-        certy.portfolio.popup_wrapper.remove();
-        certy.unlockScroll();
+        patricklensen.portfolio.popup_wrapper.remove();
+        patricklensen.unlockScroll();
     }, 500);
 };
 
@@ -736,27 +736,27 @@ certy.portfolio.closePopup = function(el){
         /**
          *  Set Global Vars
          */
-        certy.initGlobalVars();
+        patricklensen.initGlobalVars();
 
         /**
          *  Navigation
          */
-        if (certy.vars.html.hasClass('crt-nav-on')) { // Check If Nav Exists
+        if (patricklensen.vars.html.hasClass('crt-nav-on')) { // Check If Nav Exists
 
             // Scrolled Navigation ( large screens )
-            if ( Modernizr.mq('(min-width: '+certy.vars.screenMd+')') && certy.nav.height !== 'auto' ) {
-                certy.nav.initScroll( $('#crt-nav-scroll') );
+            if ( Modernizr.mq('(min-width: '+patricklensen.vars.screenMd+')') && patricklensen.nav.height !== 'auto' ) {
+                patricklensen.nav.initScroll( $('#crt-nav-scroll') );
             }
 
             // Sticky Navigation
-            certy.nav.makeSticky();
+            patricklensen.nav.makeSticky();
 
             // Navigation Tooltips
-            if(certy.nav.tooltip.active){
+            if(patricklensen.nav.tooltip.active){
                 $('#crt-nav a').hover(function () {
-                    certy.nav.tooltip.show( $(this) );
+                    patricklensen.nav.tooltip.show( $(this) );
                 },function () {
-                    certy.nav.tooltip.hide();
+                    patricklensen.nav.tooltip.hide();
                 });
             };
 
@@ -770,7 +770,7 @@ certy.portfolio.closePopup = function(el){
         /**
          *  Fixed Side Box
          */
-        certy.sideBox.makeSticky();
+        patricklensen.sideBox.makeSticky();
 
         /** Portfolio */
         var pf_grid = $('.pf-grid');
@@ -778,13 +778,13 @@ certy.portfolio.closePopup = function(el){
         if (pf_grid.length > 0) {
 
             // init portfolio grid
-            certy.portfolio.initGrid(pf_grid);
+            patricklensen.portfolio.initGrid(pf_grid);
 
             // open portfolio popup
             $(document).on('click', '.pf-project', function() {
                 var id = $(this).attr('href');
 
-                certy.portfolio.openPopup( $(id) );
+                patricklensen.portfolio.openPopup( $(id) );
 
                 return false;
             });
@@ -795,19 +795,19 @@ certy.portfolio.closePopup = function(el){
 
                 // if the target of the click isn't the container... nor a descendant of the container
                 if (!container.is(e.target) && container.has(e.target).length === 0) {
-                    certy.portfolio.closePopup();
+                    patricklensen.portfolio.closePopup();
                 }
             });
         }
 
         /** Components */
         // init sliders
-        certy.slider( $(".cr-slider") );
+        patricklensen.slider( $(".cr-slider") );
 
         // init carousel
-        certy.carousel( $(".cr-carousel") );
+        patricklensen.carousel( $(".cr-carousel") );
 
-        // console.log(certy);
+        // console.log(patricklensen);
     }); // end: document ready
 
 
@@ -815,15 +815,15 @@ certy.portfolio.closePopup = function(el){
     $(window).on('resize', function () { // start: window resize
 
         // Re Init Vars
-        certy.vars.windowW = $(window).width();
-        certy.vars.windowH = $(window).height();
-        certy.vars.windowScrollTop = $(window).scrollTop();
+        patricklensen.vars.windowW = $(window).width();
+        patricklensen.vars.windowH = $(window).height();
+        patricklensen.vars.windowScrollTop = $(window).scrollTop();
 
         // Sticky Navigation
-        certy.nav.makeSticky();
+        patricklensen.nav.makeSticky();
 
         // Sticky Side Box
-        certy.sideBox.makeSticky();
+        patricklensen.sideBox.makeSticky();
 
     }); // end: window resize
 
@@ -832,17 +832,17 @@ certy.portfolio.closePopup = function(el){
     $(window).on('scroll', function () { // start: window scroll
 
         // Re Init Vars
-        certy.vars.windowScrollTop = $(window).scrollTop();
+        patricklensen.vars.windowScrollTop = $(window).scrollTop();
 
         // Sticky Navigation
-        certy.nav.makeSticky();
+        patricklensen.nav.makeSticky();
 
         // Sticky Side Box
-        certy.sideBox.makeSticky();
+        patricklensen.sideBox.makeSticky();
 
         // Remove Tooltip
-        if(certy.nav.tooltip.el.length > 0){
-            certy.nav.tooltip.el.remove();
+        if(patricklensen.nav.tooltip.el.length > 0){
+            patricklensen.nav.tooltip.el.remove();
         }
 
     }); // end: window scroll
@@ -885,18 +885,18 @@ var ace = {
 $(function () { // start: document ready
 
     /**
-     * Certy Init Main Vars
+     * patricklensen Init Main Vars
      */
     ace.html = $('html');
     ace.body = $('body');
 
     /**
-     * Certy Detect Device Type
+     * patricklensen Detect Device Type
      */
     ace_detect_device_type();
 
     /**
-     * Certy Mobile Navigation
+     * patricklensen Mobile Navigation
      */
     $('#crt-main-nav-sm .has-sub-menu > a').on('click touchstart', function(){
         if( $(this).hasClass('hover') ){
@@ -909,7 +909,7 @@ $(function () { // start: document ready
     });
 
     /**
-     * Certy Sidebar
+     * patricklensen Sidebar
      */
     ace.sidebar.obj = $('#crt-sidebar');
     ace.sidebar.btn = $('#crt-sidebar-btn');
@@ -942,9 +942,9 @@ $(function () { // start: document ready
     });
 
     /**
-     * Certy Circle & Line Charts
+     * patricklensen Circle & Line Charts
      */
-    if(!certy.progress.animation || ace.mobile) {
+    if(!patricklensen.progress.animation || ace.mobile) {
         // Circle Chart
         ace.progress.charts = $('.progress-chart .progress-bar');
         for (var i = 0; i < ace.progress.charts.length; i++) {
@@ -963,9 +963,9 @@ $(function () { // start: document ready
     }
 
     /**
-     * Certy Animate Elements
+     * patricklensen Animate Elements
      */
-    if(certy.progress.animation && !ace.mobile) {
+    if(patricklensen.progress.animation && !ace.mobile) {
         ace_appear_elems($('.crt-animate'), 150);
     }
 
@@ -977,7 +977,7 @@ $(function () { // start: document ready
     });
 
     /**
-     * Certy Alerts
+     * patricklensen Alerts
      */
     $('.alert .close').on('click', function () {
         var alert = $(this).parent();
@@ -988,14 +988,14 @@ $(function () { // start: document ready
     });
 
     /**
-     * Certy Slider
+     * patricklensen Slider
      */
     $('.slider').slick({
         dots: true
     });
 
     /**
-     * Certy Google Map Initialisation
+     * patricklensen Google Map Initialisation
      */
     if ($('#map').length > 0) {
         initialiseGoogleMap();
