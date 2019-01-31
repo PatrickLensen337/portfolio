@@ -80,28 +80,12 @@ gulp.task('sass-lint', function () {
         .pipe(sassLint.failOnError());
 });
 
-gulp.task('watch', function () {
-    gulp.watch('assets/source/scss/**/*.scss', ['styles'])
-});
+// gulp.task('watch', function () {
+//     gulp.watch('assets/source/scss/**/*.scss', ['styles'])
+// });
 
 //Build
 
 gulp.task('default', ['server']);
 
-gulp.task('build', function (done) {
-    runSequence('styles', done)
-});
-
-
-// gulp.task('compileScss', function () {
-//    return gulp.src('assets/source/scss/style.scss')
-//         .pipe()
-//         .pipe(sass({outputStyle:'compressed'}).on('error', sass.logError))
-//         .pipe(gulp.dest('hookey/css'));
-// });
-
-
-
-// gulp.task('sass:watch', function () {
-//     gulp.watch('asserts/source/scss/style.scss', ['compileScss']);
-// });
+gulp.task('build', ['styles']);

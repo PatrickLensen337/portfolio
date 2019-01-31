@@ -765,7 +765,7 @@ input[type="search"]::-webkit-search-decoration {
  * Define consistent border, margin, and padding.
  */
 fieldset {
-  border: 1px solid #2a2a2a;
+  border: 1px solid #363537;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -6624,7 +6624,7 @@ h1, h2, h3, h4, h5, h6 {
 .icon-list .crt-icon,
 .post-title a:hover,
 .crt-nav-type1 .crt-nav li.current a {
-  color: #DC143C;
+  color: #C41F3B;
 }
 
 mark,
@@ -6642,7 +6642,7 @@ mark,
 #crt-main-nav .sub-menu li > a:hover,
 #crt-main-nav .sub-menu .current > a,
 #crt-main-nav-sm .sub-menu:before {
-  background-color: #DC143C;
+  background-color: #C41F3B;
 }
 
 .btn-share,
@@ -6651,15 +6651,15 @@ mark,
 .progress-bullets .bullet,
 .education-date:after,
 .education-date:before {
-  border-color: #DC143C;
+  border-color: #C41F3B;
 }
 
 ::selection {
-  background-color: #DC143C;
+  background-color: #C41F3B;
 }
 
 #crt-bg-shape-2 polygon {
-  fill: #DC143C;
+  fill: #C41F3B;
 }
 
 /* Color Darkest */
@@ -6687,33 +6687,33 @@ blockquote.quote-side:before,
 .widget_categories li a,
 .widget_posts_entries li h3,
 .widget_posts_entries a {
-  color: #ffffff;
+  color: #f9fbf2;
 }
 
 ::selection {
-  color: #ffffff;
+  color: #f9fbf2;
 }
 
 ::-webkit-input-placeholder {
-  color: #ffffff;
+  color: #f9fbf2;
 }
 
 ::-moz-placeholder {
-  color: #ffffff;
+  color: #f9fbf2;
 }
 
 :-ms-input-placeholder {
-  color: #ffffff;
+  color: #f9fbf2;
 }
 
 :-moz-placeholder {
-  color: #ffffff;
+  color: #f9fbf2;
 }
 
 .text-dropcup-sq,
 .styled-ul li:before,
 .education-box:before {
-  background-color: #ffffff;
+  background-color: #f9fbf2;
 }
 
 /* Color Darker */
@@ -6730,11 +6730,11 @@ table > thead > tr > th,
 .cr-carousel .slick-prev:before,
 .widget_categories li,
 .post-category-comment a {
-  color: #afafaf;
+  color: #DDD5D0;
 }
 
 .styled-ul > li > ul ul li:before {
-  background-color: #2a2a2a;
+  background-color: #363537;
 }
 
 /* Color Dark */
@@ -6760,19 +6760,19 @@ blockquote,
 .widget ol li,
 .widget_tag_cloud .tagcloud a,
 .post-category-comment a {
-  border-color: #1f1f1f;
+  border-color: #686963;
 }
 
 .crt-nav-btm:after {
-  background-color: #1f1f1f;
+  background-color: #686963;
 }
 
 .post-line {
-  color: #1f1f1f;
+  color: #686963;
 }
 
 #crt-bg-shape-1 polygon {
-  fill: #1f1f1f;
+  fill: #686963;
 }
 
 /* Color Light */
@@ -6780,12 +6780,12 @@ body,
 .form-item,
 .search-form .search-field,
 #crt-sidebar-btn {
-  background-color: #2a2a2a;
+  background-color: #363537;
 }
 
 /* Color Lighter */
 .text-dropcup-sq {
-  color: #373737;
+  color: #363537;
 }
 
 .crt-head-inner,
@@ -6806,26 +6806,26 @@ blockquote.quote-side:before,
 .crt-paper,
 .crt-paper-layers:after,
 .crt-paper-layers:before {
-  background-color: #373737;
+  background-color: #363537;
 }
 
 .tooltip:before {
-  border-top-color: #373737;
+  border-top-color: #363537;
 }
 
 .crt-nav-type1 .crt-nav-btm,
 .crt-tooltip.arrow-right:before {
-  border-left-color: #373737;
+  border-left-color: #363537;
 }
 
 .crt-tooltip.arrow-left:before {
-  border-right-color: #373737;
+  border-right-color: #363537;
 }
 
 /* Buttons */
 .btn-default {
   color: #fff;
-  background-color: #000;
+  background-color: #C41F3B;
 }
 
 .btn-light {
