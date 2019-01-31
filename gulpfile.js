@@ -7,6 +7,8 @@ var gulp        = require('gulp'),
     notify      = require('gulp-notify'),
     sassLint    = require('gulp-sass-lint'),
     browserSync = require('browser-sync'),
+    filter      = require('gulp-filter'),
+    del         = require('del'),
     sourcemaps  = require('gulp-sourcemaps');
 // Temporary solution until gulp 4
 // https://github.com/gulpjs/gulp/issues/355
@@ -47,7 +49,7 @@ var prefixerOptions = {
     browsers: ['last 2 versions']
 };
 
-gulp.task('server', ['styles'], function () {
+gulp.task('server', ['fireUp'], function () {
     browserSync.init({
         server: {
             baseDir:"./"
@@ -58,7 +60,13 @@ gulp.task('server', ['styles'], function () {
     gulp.watch('./*.html').on('change', browserSync.reload);
 });
 
-gulp.task('styles', function () {
+gulp.task('deleteHookey', function () {
+    return del([
+        'hookey'
+    ]);
+});
+
+gulp.task('styles', ['deleteHookey'], function () {
     return gulp.src('assets/source/scss/style.scss')
         .pipe(plumber({errorHandler: onError}))
         .pipe(sourcemaps.init())
@@ -71,6 +79,26 @@ gulp.task('styles', function () {
         .pipe(gulp.dest('hookey/css'))
         .pipe(browserSync.stream())
 
+});
+
+gulp.task('black', ['deleteHookey', 'styles'], function () {
+    return gulp.src('assets/fonts/icomoon/style.css')
+        .pipe(plumber({errorHandler: onError}))
+        .pipe(sourcemaps.init())
+        .pipe(prefix(prefixerOptions))
+        .pipe(rename('stylefont.css'))
+        .pipe(gulp.dest('hookey/css'))
+        .pipe(cssmin())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('hookey/css'))
+        .pipe(browserSync.stream())
+
+});
+
+gulp.task('fireUp', ['black'], function () {
+    return del ([
+        'hookey/css/stylefont.css', "hookey/css/style.css"
+    ]);
 });
 
 gulp.task('sass-lint', function () {
@@ -88,4 +116,4 @@ gulp.task('sass-lint', function () {
 
 gulp.task('default', ['server']);
 
-gulp.task('build', ['styles']);
+gulp.task('build', ['fireUp']);
