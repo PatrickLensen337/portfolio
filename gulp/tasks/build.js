@@ -16,4 +16,4 @@ var gulp        = require('gulp'),
 
 
 
-gulp.task('build', ['fireUp']);
+gulp.task('build', ['deletedist', 'fireUp']);

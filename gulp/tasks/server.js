@@ -28,7 +28,7 @@ gulp.task('server', ['deleteCSSDuplicates', 'moveVendor'],  function () {
     gulp.watch('./*.html').on('change', browserSync.reload);
 });
 
-gulp.task('default', ['server']);
+gulp.task('default', ['deletedist', 'server']);
 
 gulp.task('fireUpServer', function (cb) {
     gulpSeq('deletedist', 'styles', 'black', 'scripts', 'deleteCSSDuplicates', 'moveVendor', 'server');

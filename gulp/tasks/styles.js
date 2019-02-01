@@ -25,7 +25,7 @@ var prefixerOptions = {
 
 
 //Styles task Generates SCSS into CSS and minify
-gulp.task('styles', ['deletedist'], function () {
+gulp.task('styles', function () {
     return gulp.src('assets/source/scss/style.scss')
         .pipe(plumber({errorHandler: onError}))
         .pipe(sourcemaps.init())
@@ -40,7 +40,7 @@ gulp.task('styles', ['deletedist'], function () {
 
 });
 
-//Black Task Generates minified version of the stylefont stylesheet
+//Black Task Generates minified version of the stylefont stylesheet - Will run after Styles
 gulp.task('black', ['styles'], function () {
     return gulp.src('assets/fonts/icomoon/style.css')
         .pipe(plumber({errorHandler: onError}))
