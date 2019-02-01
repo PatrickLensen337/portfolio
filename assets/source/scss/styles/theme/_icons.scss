@@ -1,0 +1,19 @@
+.fa-icon {
+  font-size:4rem;
+}
+
+icon-li-item {
+  list-style: none !important;
+
+}
+
+.icon-ul-item {
+  list-style: none;
+  padding:0;
+
+  & li {
+    float:left;
+    margin-right:20px;
+  }
+}
+
