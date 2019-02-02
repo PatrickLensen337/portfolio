@@ -26,6 +26,7 @@
 		$mail_sent = false;
 	}	
 	if(!isset($resp)){
-		echo json_encode($mail_sent);
+		header('/contact-send.html')
+
 	}
 ?>
